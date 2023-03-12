@@ -322,7 +322,7 @@ mjx-container[display="true"] + br {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-12 23:57:49" itemprop="dateModified" datetime="2023-03-12T23:57:49+08:00">2023-03-12</time>
+                <time title="修改时间：2023-03-13 00:13:25" itemprop="dateModified" datetime="2023-03-13T00:13:25+08:00">2023-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -348,8 +348,13 @@ mjx-container[display="true"] + br {
           <h2 id="Lisp"><a href="#Lisp" class="headerlink" title="Lisp"></a>Lisp</h2><p>As we have noted before, Mathematica is similar to Lisp. So let us talk about some characters of Lisp before we discuss the Mathematica.</p>
 <p>Actually, Lisp is the abbreviation for list processing. List is an object take the form of:</p>
 <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">item1</span>,item2,item3)</span><br></pre></td></tr></table></figure>
-
-<p>The list is also named as symbolic expression. The target of the interpreter of Lisp is to get the value of each symbol expression passed to it. The compiler takes <code>item1</code> as the name of the function and <code>item2</code> and <code>item3</code> as  variables. The method was invented by Jan Łukasiewicz from Poland, so it is named as Polish notation. Despite its difficulties for human to understand, it is convenient for the computer to cope with.</p>
+<p>The list is also named as symbolic expression. The target of the interpreter of Lisp is to get the value of each symbol expression passed to it. The compiler takes <code>item1</code> as the name of the function and <code>item2</code> and <code>item3</code> as  variables. The method was invented by Jan Łukasiewicz from Poland, so it is named as Polish notation. Despite its difficulties for human to understand, it is convenient for the computer to cope with. When we compile a program, we need to convert the source code to abstract syntax tree. So the way we write Lisp is just writing a syntax tree.</p>
+<p>In Mathematica, the function <code>Treeform</code> can get a expression’s syntax tree.</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">TreeForm</span><span class="punctuation">[</span><span class="punctuation">(</span><span class="variable">a</span> <span class="operator">+</span> <span class="variable">b</span><span class="operator">^</span><span class="variable">n</span><span class="punctuation">)</span><span class="operator">/</span><span class="variable">z</span> <span class="operator">==</span> <span class="variable">x</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+<p>Have a try, and some surprises are waiting for you. If we want to write the expression above in Lisp, then it would take the form of</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">==</span>,(<span class="name">*</span>,(<span class="name">+</span>,a,(<span class="name">expt</span>,b,n)),(<span class="name">expt</span>,z,<span class="number">-1</span>)),x)</span><br></pre></td></tr></table></figure>
+<p>Actually, the kernel of Mathematica understand the expression in the same way. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In:FullForm[(a + b^n)/z == x]</span><br><span class="line">Out:Equal[Times[Plus[a,Power[b,n]],Power[z,-1]],x]</span><br></pre></td></tr></table></figure>
 
       
     </div>
