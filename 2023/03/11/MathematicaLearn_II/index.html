@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"clark-young.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="LispAs we have noted before, Mathematica is similar to Lisp, which is the abbreviation for list processing. So let us talk about some characters of Lisp before we discuss the Mathematica. Lisp take th">
+  <meta name="description" content="LispAs we have noted before, Mathematica is similar to Lisp. So let us talk about some characters of Lisp before we discuss the Mathematica. Actually, Lisp is the abbreviation for list processing. Lis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Notes to the Core Language of Mathematica II (List)">
 <meta property="og:url" content="http://clark-young.github.io/2023/03/11/MathematicaLearn_II/index.html">
 <meta property="og:site_name" content="Chunyu Yang&#39;s Homepage">
-<meta property="og:description" content="LispAs we have noted before, Mathematica is similar to Lisp, which is the abbreviation for list processing. So let us talk about some characters of Lisp before we discuss the Mathematica. Lisp take th">
+<meta property="og:description" content="LispAs we have noted before, Mathematica is similar to Lisp. So let us talk about some characters of Lisp before we discuss the Mathematica. Actually, Lisp is the abbreviation for list processing. Lis">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-11T10:25:12.000Z">
-<meta property="article:modified_time" content="2023-03-12T12:07:08.444Z">
+<meta property="article:modified_time" content="2023-03-12T15:57:49.609Z">
 <meta property="article:author" content="Chunyu Yang">
 <meta property="article:tag" content="Mathematica">
 <meta name="twitter:card" content="summary">
@@ -213,7 +213,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-12 20:07:08" itemprop="dateModified" datetime="2023-03-12T20:07:08+08:00">2023-03-12</time>
+                <time title="修改时间：2023-03-12 23:57:49" itemprop="dateModified" datetime="2023-03-12T23:57:49+08:00">2023-03-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -236,11 +236,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Lisp"><a href="#Lisp" class="headerlink" title="Lisp"></a>Lisp</h2><p>As we have noted before, Mathematica is similar to Lisp, which is the abbreviation for list processing. So let us talk about some characters of Lisp before we discuss the Mathematica.</p>
-<p>Lisp take the form of bellow</p>
+        <h2 id="Lisp"><a href="#Lisp" class="headerlink" title="Lisp"></a>Lisp</h2><p>As we have noted before, Mathematica is similar to Lisp. So let us talk about some characters of Lisp before we discuss the Mathematica.</p>
+<p>Actually, Lisp is the abbreviation for list processing. List is an object take the form of:</p>
 <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">item1</span>,item2,item3)</span><br></pre></td></tr></table></figure>
 
-<p>The compiler takes <code>item1</code> as the name of the function and <code>item2</code> and <code>item3</code> as  variables, which is so-called Polish notation.</p>
+<p>The list is also named as symbolic expression. The target of the interpreter of Lisp is to get the value of each symbol expression passed to it. The compiler takes <code>item1</code> as the name of the function and <code>item2</code> and <code>item3</code> as  variables. The method was invented by Jan Łukasiewicz from Poland, so it is named as Polish notation. Despite its difficulties for human to understand, it is convenient for the computer to cope with.</p>
 
     </div>
 
