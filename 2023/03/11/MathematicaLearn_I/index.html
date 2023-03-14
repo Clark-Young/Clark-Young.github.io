@@ -30,7 +30,7 @@
 <meta property="og:description" content="This is a note to the course “Core Language of Mathematica” given by Siqi Liu in Bilibili. There  is also a PDF version in Chinese.  IntroductionWhy Mathematica?Firstly, we talk about why we use Math">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-11T04:52:02.000Z">
-<meta property="article:modified_time" content="2023-03-13T04:01:46.072Z">
+<meta property="article:modified_time" content="2023-03-13T05:50:35.628Z">
 <meta property="article:author" content="Chunyu Yang">
 <meta property="article:tag" content="Mathematica">
 <meta name="twitter:card" content="summary">
@@ -325,7 +325,7 @@ mjx-container[display="true"] + br {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-13 12:01:46" itemprop="dateModified" datetime="2023-03-13T12:01:46+08:00">2023-03-13</time>
+                <time title="修改时间：2023-03-13 13:50:35" itemprop="dateModified" datetime="2023-03-13T13:50:35+08:00">2023-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -366,6 +366,7 @@ mjx-container[display="true"] + br {
 <h2 id="The-History-of-Mathematica"><a href="#The-History-of-Mathematica" class="headerlink" title="The History of Mathematica"></a>The History of Mathematica</h2><p>We could learn about the history of Mathematica in the web site Mathematica—Three Decades of Contributions, Invention, Discovery, and Education (wolfram.com), and as Mathematica is developed by C, it is similar to C in some respects. When Wolfram developed the Mathematica, he got many inspirations from Lisp which lead to the similarity between them.</p>
 <h2 id="The-Mathematica-function-as-calculator"><a href="#The-Mathematica-function-as-calculator" class="headerlink" title="The Mathematica function as calculator"></a>The Mathematica function as calculator</h2><p>The calculation in Mathematica will always be performed in high precision and it could function as a calculator itself. Like:</p>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">In</span><span class="operator">:</span> <span class="number">1</span><span class="operator">+</span><span class="number">1</span></span><br><span class="line"><span class="built_in">Out</span><span class="operator">:</span> <span class="number">2</span></span><br><span class="line"><span class="built_in">In</span><span class="operator">:</span> <span class="built_in">Sin</span><span class="punctuation">[</span><span class="built_in">Pi</span><span class="operator">/</span><span class="number">2</span><span class="punctuation">]</span></span><br><span class="line"><span class="built_in">Out</span><span class="operator">:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
 <p>But its capacity is far more than the arithmetic operation and call simple functions. We could use <code>Expand</code> to perform expansion, <code>Factor</code> to perform factorization, <code>Solve</code> to solve equations. Some functions of advanced mathematics are also equipped, like <code>Dsolve</code> to solve differential equations, <code>D</code> to perform derivation, <code>Limit</code> to get the limit of a function, <code>Sum</code> to calculate the series.</p>
 <p>When you are performing a series of computations, if you worry about the contamination of variables, you could reopen the kernel.</p>
 <p>Apart from the simple functions we have noted above, Mathematica has a lot of advanced built-in functions. For example, we could use <code>Import</code> to get data from the internet. And we could also deal with pictures and music with Mathematica, capture stock data from the Internet to achieve quantitative trading.</p>
@@ -376,9 +377,15 @@ mjx-container[display="true"] + br {
 <h1 id="Basic-Grammar"><a href="#Basic-Grammar" class="headerlink" title="Basic Grammar"></a>Basic Grammar</h1><p>In this section, we will talk about the basic grammar of writing a Mathematica programm.</p>
 <h2 id="Type-Checking"><a href="#Type-Checking" class="headerlink" title="Type Checking"></a>Type Checking</h2><p>The type checking for Mathematica is not strict, for example:</p>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">In</span><span class="operator">:</span> <span class="built_in">Sin</span><span class="punctuation">[</span><span class="string">"I'm a String!"</span><span class="punctuation">]</span></span><br><span class="line"><span class="built_in">Out</span><span class="operator">:</span> <span class="built_in">Sin</span><span class="punctuation">[</span><span class="built_in">I</span><span class="operator">'</span><span class="variable">m</span> <span class="variable">a</span> <span class="built_in">String</span><span class="operator">!</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
 <p>The less stricter the type checking, the more flexible the programming. Of course, it may incur errors. But usually  a Mathematica program is short, so developers could check the error by themselves.</p>
 <p>We will see some skills base on the loose type checking of Mathematica in later sections.</p>
-<h2 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h2>
+<h2 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h2><p>The <code>If</code> of Mathematica take the form of <code>If[conditional judgement,True's opertaions, Else's operations, Unevaluated' operations]</code>.</p>
+<p>For example:</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">If</span><span class="punctuation">[</span><span class="variable">a</span><span class="operator">==</span><span class="variable">b</span><span class="operator">,</span><span class="built_in">Print</span><span class="punctuation">[</span><span class="string">"Then"</span><span class="punctuation">]</span><span class="operator">,</span><span class="built_in">Print</span><span class="punctuation">[</span><span class="string">"Else"</span><span class="punctuation">]</span><span class="operator">,</span><span class="built_in">Print</span><span class="punctuation">[</span><span class="string">"Unevaluated"</span><span class="punctuation">]</span><span class="punctuation">]</span></span><br><span class="line"><span class="built_in">If</span><span class="punctuation">[</span><span class="variable">a</span> <span class="operator">===</span> <span class="variable">b</span><span class="operator">,</span> <span class="built_in">Print</span><span class="punctuation">[</span><span class="string">"Then"</span><span class="punctuation">]</span><span class="operator">,</span> <span class="built_in">Print</span><span class="punctuation">[</span><span class="string">"Else"</span><span class="punctuation">]</span><span class="operator">,</span> <span class="built_in">Print</span><span class="punctuation">[</span><span class="string">"Unevaluated"</span><span class="punctuation">]</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<p>In Mathematica, <code>==</code> means equal while <code>===</code> means sames</p>
+
     </div>
 
     
