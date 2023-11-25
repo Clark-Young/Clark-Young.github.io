@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Notes to the Core Language of Mathematica I (Introduction &amp; Basic Grammar) | Chunyu Yang&#39;s Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="This is a note to the course “Core Language of Mathematica” given by Siqi Liu in Bilibili. There  is also a PDF version in Chinese.  IntroductionWhy Mathematica?Firstly, we talk about why we use Math">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notes to the Core Language of Mathematica I (Introduction &amp; Basic Grammar)">
+<meta property="og:url" content="http://clark-young.github.io/2023/03/10/MathematicaLearn_I/index.html">
+<meta property="og:site_name" content="Chunyu Yang&#39;s Homepage">
+<meta property="og:description" content="This is a note to the course “Core Language of Mathematica” given by Siqi Liu in Bilibili. There  is also a PDF version in Chinese.  IntroductionWhy Mathematica?Firstly, we talk about why we use Math">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-11T04:52:02.000Z">
+<meta property="article:modified_time" content="2023-11-25T20:28:46.150Z">
+<meta property="article:author" content="Chunyu Yang">
+<meta property="article:tag" content="Mathematica">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Chunyu Yang's Homepage" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Chunyu Yang&#39;s Homepage</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://Clark-Young.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-MathematicaLearn_I" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/10/MathematicaLearn_I/" class="article-date">
+  <time class="dt-published" datetime="2023-03-11T04:52:02.000Z" itemprop="datePublished">2023-03-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/programming-language/">programming language</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Notes to the Core Language of Mathematica I (Introduction &amp; Basic Grammar)
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>This is a note to the course “Core Language of Mathematica” given by Siqi Liu in Bilibili. There  is also a <a href="https://clark-young.github.io/Files/mmaNotes.pdf">PDF version</a> in Chinese.</p>
+</blockquote>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="Why-Mathematica"><a href="#Why-Mathematica" class="headerlink" title="Why Mathematica?"></a>Why Mathematica?</h2><p>Firstly, we talk about why we use Mathmatica. The question is quite open and people in different areas will give different answers. So we begin with the way of a scientific worker workes: </p>
+<ol>
+<li>Find a question which seems solvable;</li>
+<li>Try to use some examples to understand the question;</li>
+<li>Come up with a scheme which seems to be able to solve the question;</li>
+<li>If the scheme succeeds, then the problem is solved;</li>
+<li>If the scheme fails, return to 2;</li>
+<li>If all the schemes fail, return to 1.</li>
+</ol>
+<p>So, scientific workers would use plenty of simulation and experiments. In order to enhance the efficiency of work, we get the machine to share some of our work. Specifically, for people who need computation, we should get the computer to help us. So we need programming. </p>
+<p>And then we need to choose the most efficient way of programming. The efficiency of programming is decided by the time we spend writing and using it. In most cases, the time of running a program for once is far shorter than the time we need to write it. And usually, we scientists would run the program only once. As a result, the most efficient way is just the fastest way to write a program.</p>
+<p>The language of Mathematica is close to natural language and it has many built-in functions and well developed documents, which makes it very suitable and easy to write a program, thus shortening the time we need to develop a program. </p>
+<h2 id="The-History-of-Mathematica"><a href="#The-History-of-Mathematica" class="headerlink" title="The History of Mathematica"></a>The History of Mathematica</h2><p>We could learn about the history of Mathematica in the web site Mathematica—Three Decades of Contributions, Invention, Discovery, and Education (wolfram.com), and as Mathematica is developed by C, it is similar to C in some respects. When Wolfram developed the Mathematica, he got many inspirations from Lisp which lead to the similarity between them.</p>
+<h2 id="The-Mathematica-function-as-calculator"><a href="#The-Mathematica-function-as-calculator" class="headerlink" title="The Mathematica function as calculator"></a>The Mathematica function as calculator</h2><p>The calculation in Mathematica will always be performed in high precision and it could function as a calculator itself. Like:</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">In</span><span class="operator">:</span> <span class="number">1</span><span class="operator">+</span><span class="number">1</span></span><br><span class="line"><span class="built_in">Out</span><span class="operator">:</span> <span class="number">2</span></span><br><span class="line"><span class="built_in">In</span><span class="operator">:</span> <span class="built_in">Sin</span><span class="punctuation">[</span><span class="built_in">Pi</span><span class="operator">/</span><span class="number">2</span><span class="punctuation">]</span></span><br><span class="line"><span class="built_in">Out</span><span class="operator">:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>But its capacity is far more than the arithmetic operation and call simple functions. We could use <code>Expand</code> to perform expansion, <code>Factor</code> to perform factorization, <code>Solve</code> to solve equations. Some functions of advanced mathematics are also equipped, like <code>Dsolve</code> to solve differential equations, <code>D</code> to perform derivation, <code>Limit</code> to get the limit of a function, <code>Sum</code> to calculate the series.</p>
+<p>When you are performing a series of computations, if you worry about the contamination of variables, you could reopen the kernel.</p>
+<p>Apart from the simple functions we have noted above, Mathematica has a lot of advanced built-in functions. For example, we could use <code>Import</code> to get data from the internet. And we could also deal with pictures and music with Mathematica, capture stock data from the Internet to achieve quantitative trading.</p>
+<h2 id="Notations"><a href="#Notations" class="headerlink" title="Notations"></a>Notations</h2><p>In Mathematica both the functions and constants use the Upper Camel Case. As a result, to avoid using the reserved words, we could use the Lower Camel Case. The comments are written in the form of <code>(* comments *)</code>. If an element has got an value, it would be black and if not it would be blue.</p>
+<h2 id="Some-Other-Information-about-This-notes"><a href="#Some-Other-Information-about-This-notes" class="headerlink" title="Some Other Information about This notes"></a>Some Other Information about This notes</h2><p>The notes is from the course “Core Language of Mathematica” taught by Siqi Liu, Tsinghua  University. And as the document of Mathematica is so strong, we don’t talk about the details of many functions unless we need to do that. We mention the usage of the function and readers could just read the details of the function in the document of Mathematica.</p>
+<p>We highly recommend our readers to use genuine software. The price is not so unaffordable. If you think it is quiet costive, there are still a way to use the Mathematica legally. In May 2019, Wolfram put forward Wolfram Engine, and it is free of charge. And there many ways to add a notebook to the kernel. I recommend this passage <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/438701709">在 VS Code 中使用 Wolfram 笔记本 - 知乎 (zhihu.com)</a>.</p>
+<h2 id="The-Principle-of-Mathematica"><a href="#The-Principle-of-Mathematica" class="headerlink" title="The Principle of Mathematica"></a>The Principle of Mathematica</h2><p>In Mathematica, there are two fundamental principles. Firstly, <strong>everything is a expression</strong>. Secondly, <strong>computation is just rewriting</strong>.</p>
+<p>In Mathematica, numbers, strings and symbols are called atom. An atom is a expression and if $F,X_1,X_2,…,X_n$ are expressions, $F[X_1,X_2,…,X_n]$ is a expression. </p>
+<p>And when we perform computation in Mathematica, what we do is just get a repeatable regime in what we need to compute and interpret it to Mathematica. Thus, rather than variables, what we actually care about is the functions. i.e. Mathematica’s zeroth principle: <strong>functions matter, not variables</strong>.</p>
+<h1 id="Basic-Grammar"><a href="#Basic-Grammar" class="headerlink" title="Basic Grammar"></a>Basic Grammar</h1><p>In this section, we will talk about the basic grammar of writing a Mathematica programm.</p>
+<h2 id="Type-Checking"><a href="#Type-Checking" class="headerlink" title="Type Checking"></a>Type Checking</h2><p>The type checking for Mathematica is not strict, for example:</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">In</span><span class="operator">:</span> <span class="built_in">Sin</span><span class="punctuation">[</span><span class="string">&quot;I&#x27;m a String!&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="built_in">Out</span><span class="operator">:</span> <span class="built_in">Sin</span><span class="punctuation">[</span><span class="built_in">I</span><span class="operator">&#x27;</span><span class="variable">m</span> <span class="variable">a</span> <span class="built_in">String</span><span class="operator">!</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<p>The less stricter the type checking, the more flexible the programming. Of course, it may incur errors. But usually  a Mathematica program is short, so developers could check the error by themselves.</p>
+<p>We will see some skills base on the loose type checking of Mathematica in later sections.</p>
+<h2 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h2><p>The <code>If</code> of Mathematica take the form of <code>If[conditional judgement,True&#39;s opertaions, Else&#39;s operations, Unevaluated&#39; operations]</code>.</p>
+<p>For example:</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">If</span><span class="punctuation">[</span><span class="variable">a</span><span class="operator">==</span><span class="variable">b</span><span class="operator">,</span><span class="built_in">Print</span><span class="punctuation">[</span><span class="string">&quot;Then&quot;</span><span class="punctuation">]</span><span class="operator">,</span><span class="built_in">Print</span><span class="punctuation">[</span><span class="string">&quot;Else&quot;</span><span class="punctuation">]</span><span class="operator">,</span><span class="built_in">Print</span><span class="punctuation">[</span><span class="string">&quot;Unevaluated&quot;</span><span class="punctuation">]</span><span class="punctuation">]</span></span><br><span class="line"><span class="built_in">If</span><span class="punctuation">[</span><span class="variable">a</span> <span class="operator">===</span> <span class="variable">b</span><span class="operator">,</span> <span class="built_in">Print</span><span class="punctuation">[</span><span class="string">&quot;Then&quot;</span><span class="punctuation">]</span><span class="operator">,</span> <span class="built_in">Print</span><span class="punctuation">[</span><span class="string">&quot;Else&quot;</span><span class="punctuation">]</span><span class="operator">,</span> <span class="built_in">Print</span><span class="punctuation">[</span><span class="string">&quot;Unevaluated&quot;</span><span class="punctuation">]</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<p>In Mathematica, <code>==</code> means equal while <code> ===</code> means sames.</p>
+<h2 id="Circle"><a href="#Circle" class="headerlink" title="Circle"></a>Circle</h2><h2 id="Subroutine"><a href="#Subroutine" class="headerlink" title="Subroutine"></a>Subroutine</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://clark-young.github.io/2023/03/10/MathematicaLearn_I/" data-id="clpelejis000jysx1h9wgfzn1" data-title="Notes to the Core Language of Mathematica I (Introduction &amp; Basic Grammar)" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mathematica/" rel="tag">Mathematica</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/03/11/MathematicaLearn_II/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Notes to the Core Language of Mathematica II (List)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/03/10/SummerIntern/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">暑研申请经验总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LaTeX/">LaTeX</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming-language/">programming language</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fortran/" rel="tag">Fortran</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Introduction/" rel="tag">Introduction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/" rel="tag">LaTeX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematica/" rel="tag">Mathematica</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Summer-Intern/" rel="tag">Summer Intern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USTC-Courses/" rel="tag">USTC_Courses</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Welcome/" rel="tag">Welcome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A3%9E%E8%B7%83/" rel="tag">飞跃</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Fortran/" style="font-size: 10px;">Fortran</a> <a href="/tags/Introduction/" style="font-size: 10px;">Introduction</a> <a href="/tags/LaTeX/" style="font-size: 20px;">LaTeX</a> <a href="/tags/Mathematica/" style="font-size: 20px;">Mathematica</a> <a href="/tags/Summer-Intern/" style="font-size: 10px;">Summer Intern</a> <a href="/tags/USTC-Courses/" style="font-size: 10px;">USTC_Courses</a> <a href="/tags/Welcome/" style="font-size: 10px;">Welcome</a> <a href="/tags/%E9%A3%9E%E8%B7%83/" style="font-size: 10px;">飞跃</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/31/latexlec/">2023年4月1日LaTeX讲座</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/20/fortran/">Brief Notes On Fortran Language</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/17/TeXinvscode/">Use Visual Studio Code to Write LaTeX in Windows</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/11/MathematicaLearn_II/">Notes to the Core Language of Mathematica II (List)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/10/MathematicaLearn_I/">Notes to the Core Language of Mathematica I (Introduction &amp; Basic Grammar)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Chunyu Yang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

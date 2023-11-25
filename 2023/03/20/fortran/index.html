@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Brief Notes On Fortran Language | Chunyu Yang&#39;s Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="程序结构我们先从一个最简单的Fortran程序看起 123456789program HelloWorldimplicit none! Hello World!write(*,*) &quot;Hello World!&quot;    print *, &quot;Hello Fortran!&quot;   end program HelloWorld   当我们使用Fortran语言的时候，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Brief Notes On Fortran Language">
+<meta property="og:url" content="http://clark-young.github.io/2023/03/20/fortran/index.html">
+<meta property="og:site_name" content="Chunyu Yang&#39;s Homepage">
+<meta property="og:description" content="程序结构我们先从一个最简单的Fortran程序看起 123456789program HelloWorldimplicit none! Hello World!write(*,*) &quot;Hello World!&quot;    print *, &quot;Hello Fortran!&quot;   end program HelloWorld   当我们使用Fortran语言的时候，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-20T16:25:28.000Z">
+<meta property="article:modified_time" content="2023-11-25T20:28:46.130Z">
+<meta property="article:author" content="Chunyu Yang">
+<meta property="article:tag" content="Fortran">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Chunyu Yang's Homepage" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Chunyu Yang&#39;s Homepage</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://Clark-Young.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-fortran" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/20/fortran/" class="article-date">
+  <time class="dt-published" datetime="2023-03-20T16:25:28.000Z" itemprop="datePublished">2023-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/programming-language/">programming language</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Brief Notes On Fortran Language
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h1><p>我们先从一个最简单的Fortran程序看起</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">program</span></span> HelloWorld</span><br><span class="line"><span class="keyword">implicit</span> <span class="keyword">none</span></span><br><span class="line"></span><br><span class="line"><span class="comment">! Hello World!</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">write</span>(*,*) <span class="string">&quot;Hello World!&quot;</span>    </span><br><span class="line"><span class="built_in">print</span> *, <span class="string">&quot;Hello Fortran!&quot;</span></span><br><span class="line">   </span><br><span class="line"><span class="keyword">end</span> <span class="function"><span class="keyword">program</span></span> HelloWorld </span><br></pre></td></tr></table></figure>
+
+<p>当我们使用Fortran语言的时候，主程序要写在<code>program</code>和<code>end program</code>之间，且<code>program</code>之后需要跟程序的名称，这个名称不必和文件名相同。</p>
+<p>Fortran使用<code>!</code>标志注释行。<code>implicit none</code>的作用是要求程序不使用隐式变量声明（不然的话<code>i,j,k,l</code>这些会默认为整数类型）。</p>
+<h1 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h1><p>在上述程序中，我们使用了<code>write</code>函数，这个函数接受两个参数。一个是输出的开始位置，默认为6（非默认情形我们稍后讨论），另外一个是格式化参数。Fortran中的输出函数还有<code>print</code>，它只接受一个参数，即格式化参数，换而言之，他只能输出到屏幕上。</p>
+<p><code>read</code>函数有两种写法<code>read(*,*)</code>和<code>read *,</code>，分别类似于<code>write</code>和<code>print</code>。</p>
+<p>输出的格式化按照如下的方式进行，输入同理。</p>
+<ul>
+<li><code>Iw[.m]</code>以w个字符的宽度来输出整数，至少输出m个数字。</li>
+<li><code>Fw.d</code>以w个字符文本框来输出浮点数，小数部分占d个字符宽，输出文本框的设置不足显示*号。输出不足补空格，小数不足补0。</li>
+<li><code>Ew.d[Ee]</code>用科学计数法，以w个字符宽来输出浮点数，小数部分占d个字符宽，指数部分最少输出e个数字。<br>     !输出不足部分补空格，小数部分不足补0。</li>
+<li><code>Aw</code> 以w个字符宽来输出字符串。</li>
+<li><code>nX</code> 输出位置向右移动n位。</li>
+</ul>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>Fortran中的数据类型有整型（integer）、实型（real）、复数型（complex）、逻辑型（logical）、字符型（character）等。</p>
+<p>整数和实数类型的使用方式类似C语言，但是可以通过<code>(kind=n)</code>的形式来指定精度，当然括号中的是可选部分。</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">integer</span>(<span class="keyword">kind</span>=<span class="number">4</span>) :: int_num</span><br><span class="line"><span class="keyword">real</span>(<span class="number">4</span>) :: real_num</span><br></pre></td></tr></table></figure>
+
+<p>Fortran是少有的原生支持复数类型的语言，复数以类似向量的方式来表示，</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">complex</span> :: a,b</span><br><span class="line">a=(<span class="number">1.0</span>,<span class="number">1.0</span>)</span><br><span class="line">b=(<span class="number">1.0</span>,<span class="number">2.0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>此外还有字符串类型和逻辑类型，如果字符串类型没有初值，则必须指定长度，</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">character</span> str_1=<span class="string">&#x27;abcd&#x27;</span></span><br><span class="line"><span class="keyword">character</span>(len=<span class="number">10</span>) str_2</span><br></pre></td></tr></table></figure>
+
+<p>如果接下来赋给<code>str_2</code>的值的长度大于10，则会自动截断到10。</p>
+<p>逻辑判断类型无需多说，其使用方式为</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">logical</span> a,b</span><br><span class="line">a=.true.</span><br><span class="line">b=.false.</span><br></pre></td></tr></table></figure>
+
+<p>Fortran中的数组定义有两种方式</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">integer</span> :: student(<span class="number">5</span>) 	<span class="comment">!一维数组</span></span><br><span class="line"><span class="keyword">integer</span> :: a(<span class="number">3</span>,<span class="number">3</span>)		<span class="comment">!二维数组</span></span><br><span class="line"><span class="keyword">integer</span>,<span class="keyword">dimension</span>(<span class="number">3</span>,<span class="number">3</span>) :: a	<span class="comment">!另一种方法</span></span><br></pre></td></tr></table></figure>
+
+<p>值得注意的是，<strong>Fortran中的数组索引从1开始，而且按列索引</strong>。</p>
+<p>以下是一些数组的操作的例子</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">integer</span> :: a(<span class="number">3</span>,<span class="number">3</span>),b(<span class="number">3</span>,<span class="number">3</span>),c(<span class="number">3</span>,<span class="number">3</span>),d(<span class="number">5</span>),e(<span class="number">5</span>),f</span><br><span class="line">a=b+c			        <span class="comment">!实现矩阵相加</span></span><br><span class="line">a=b-c			        <span class="comment">!实现矩阵相减</span></span><br><span class="line">a=<span class="built_in">matmul</span>(b,c)			<span class="comment">!实现矩阵相乘</span></span><br><span class="line">d(<span class="number">3</span>:<span class="number">5</span>)=<span class="number">5</span>		        <span class="comment">!对数组部分操作 d(3)=d(4)=d(5)=5</span></span><br><span class="line">f=<span class="built_in">dot_product</span>(d, e)		<span class="comment">!对一维数组做向量的点乘</span></span><br></pre></td></tr></table></figure>
+
+<p>Fortran中可以声明可变大小的数组，只要在声明的时候加上allocatable的形容词，并注明是数组的维度，在后续需要确定大小的时候为数组配置内存空间即可。</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">program</span></span> allocatable_array</span><br><span class="line">	<span class="keyword">implicit</span> <span class="keyword">none</span></span><br><span class="line">	<span class="keyword">integer</span> n=<span class="number">10</span></span><br><span class="line">	<span class="keyword">integer</span>, <span class="keyword">allocatable</span> :: a(:)    <span class="comment">! 声明一个可变大小的一维数组；</span></span><br><span class="line">	<span class="built_in">allocate</span> a(n) 					<span class="comment">! 给数组分配内存空间</span></span><br><span class="line"><span class="keyword">end</span> <span class="function"><span class="keyword">program</span></span> allocatable_array</span><br></pre></td></tr></table></figure>
+
+<h1 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h1><h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><p>Fortran中的<code>if</code>语句和C语言是类似的（其实多数程序设计语言在这里都是类似的，而且说Fortran类似C本身并不合适，因为Fortran是最古老的程序设计语言，如果某个语言与之相似，则应该该语言借鉴了Fortran，不过按照现在的现在普遍规律，多数人都应该先学C语言再学的Fortran，为了便于大家理解Fortran所以说Fortran类似C）。</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">logical</span> expression) <span class="keyword">then</span>      </span><br><span class="line">   statement  </span><br><span class="line"><span class="keyword">end</span> <span class="keyword">if</span></span><br></pre></td></tr></table></figure>
+
+<p>当然还有<code>if... (else if..). else ... </code>的结构</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">logical</span> expression <span class="number">1</span>) <span class="keyword">then</span> </span><br><span class="line">   <span class="comment">! block 1   </span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">logical</span> expression <span class="number">2</span>) <span class="keyword">then</span>       </span><br><span class="line">   <span class="comment">! block 2   </span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">logical</span> expression <span class="number">3</span>) <span class="keyword">then</span>       </span><br><span class="line">   <span class="comment">! block 3  </span></span><br><span class="line"><span class="keyword">else</span>       </span><br><span class="line">   <span class="comment">! block 4   </span></span><br><span class="line"><span class="keyword">end</span> <span class="keyword">if</span></span><br></pre></td></tr></table></figure>
+
+<p>我们可以给<code>if</code>语句一个名字</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">name</span> <span class="keyword">if</span> (<span class="keyword">logical</span> expression <span class="number">1</span>) <span class="keyword">then</span> </span><br><span class="line">	...</span><br><span class="line"><span class="keyword">end</span> <span class="keyword">if</span> <span class="keyword">name</span></span><br></pre></td></tr></table></figure>
+
+<p>当然不止<code>if</code>语句有这样的功能，Fortran中的所有块都可以给一个名字。</p>
+<h2 id="select-case语句"><a href="#select-case语句" class="headerlink" title="select case语句"></a>select case语句</h2><p><code>select case</code> 类似于C语言中的<code>switch case</code>，但是功能上更加灵活，支持简单的比较判断，支持整数，字符类型。</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">program</span></span> selectCaseProg</span><br><span class="line"><span class="keyword">implicit</span> <span class="keyword">none</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">! local variable declaration</span></span><br><span class="line">   <span class="keyword">integer</span> :: marks = <span class="number">78</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">select</span> <span class="keyword">case</span> (marks)</span><br><span class="line">      <span class="keyword">case</span> (<span class="number">91</span>:<span class="number">100</span>) </span><br><span class="line">         <span class="built_in">print</span>*, <span class="string">&quot;Excellent!&quot;</span> </span><br><span class="line">      <span class="keyword">case</span> (<span class="number">81</span>:<span class="number">90</span>)</span><br><span class="line">         <span class="built_in">print</span>*, <span class="string">&quot;Very good!&quot;</span></span><br><span class="line">      <span class="keyword">case</span> (<span class="number">71</span>:<span class="number">80</span>) </span><br><span class="line">         <span class="built_in">print</span>*, <span class="string">&quot;Well done!&quot;</span> </span><br><span class="line">      <span class="keyword">case</span> (<span class="number">61</span>:<span class="number">70</span>)</span><br><span class="line">         <span class="built_in">print</span>*, <span class="string">&quot;Not bad!&quot;</span> </span><br><span class="line">      <span class="keyword">case</span> (<span class="number">41</span>:<span class="number">60</span>)</span><br><span class="line">         <span class="built_in">print</span>*, <span class="string">&quot;You passed!&quot;</span>  </span><br><span class="line">      <span class="keyword">case</span> (:<span class="number">40</span>)</span><br><span class="line">         <span class="built_in">print</span>*, <span class="string">&quot;Better try again!&quot;</span>  </span><br><span class="line">      <span class="keyword">case</span> <span class="keyword">default</span></span><br><span class="line">         <span class="built_in">print</span>*, <span class="string">&quot;Invalid marks&quot;</span> </span><br><span class="line">   <span class="keyword">end</span> <span class="keyword">select</span></span><br><span class="line">   <span class="built_in">print</span>*, <span class="string">&quot;Your marks is &quot;</span>, marks</span><br><span class="line"> </span><br><span class="line"><span class="keyword">end</span> <span class="function"><span class="keyword">program</span></span> selectCaseProg</span><br></pre></td></tr></table></figure>
+
+<h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><h2 id="do循环"><a href="#do循环" class="headerlink" title="do循环"></a>do循环</h2><p>Fortran中的<code>do</code>循环类似于C语言中的<code>for</code>循环，其基本格式为</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> var = start, <span class="keyword">stop</span> [,step]    </span><br><span class="line">   <span class="comment">! statement(s)</span></span><br><span class="line">   …</span><br><span class="line"><span class="keyword">end</span> <span class="keyword">do</span></span><br></pre></td></tr></table></figure>
+
+<p><code>var</code>需要是一个整数，<code>step</code>的默认值是1。</p>
+<h2 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do while循环"></a>do while循环</h2><p><code>do while</code>循环类似于C语言中的<code>while</code>循环。</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> <span class="keyword">while</span> (<span class="keyword">logical</span> expr) </span><br><span class="line">   statements</span><br><span class="line"><span class="keyword">end</span> <span class="keyword">do</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="循环的控制语句"><a href="#循环的控制语句" class="headerlink" title="循环的控制语句"></a>循环的控制语句</h2><h3 id="exit语句"><a href="#exit语句" class="headerlink" title="exit语句"></a>exit语句</h3><p><code>exit</code>语句终止循环或<code>select case</code>语句，并将执行立即循环或<code>select</code> 下面的语句。这个时候，给循环赋一个名字就很有用，当循环是嵌套的时候，可以直接指定退出某一层循环</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">program</span></span> nestedLoop </span><br><span class="line"><span class="keyword">implicit</span> <span class="keyword">none</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">integer</span>:: i, j, k</span><br><span class="line">   iloop: <span class="keyword">do</span> i = <span class="number">1</span>, <span class="number">3</span>      </span><br><span class="line">      jloop: <span class="keyword">do</span> j = <span class="number">1</span>, <span class="number">3</span>         </span><br><span class="line">         kloop: <span class="keyword">do</span> k = <span class="number">1</span>, <span class="number">3</span>    </span><br><span class="line">        </span><br><span class="line">         <span class="built_in">print</span>*, <span class="string">&quot;(i, j, k): &quot;</span>, i, j, k               </span><br><span class="line">         </span><br><span class="line">         <span class="keyword">if</span> (k==<span class="number">2</span>) <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">exit</span> jloop </span><br><span class="line">         <span class="keyword">end</span> <span class="keyword">if</span></span><br><span class="line">         </span><br><span class="line">         <span class="keyword">end</span> <span class="keyword">do</span> kloop       </span><br><span class="line">      <span class="keyword">end</span> <span class="keyword">do</span> jloop  </span><br><span class="line">   <span class="keyword">end</span> <span class="keyword">do</span> iloop </span><br><span class="line">   </span><br><span class="line"><span class="keyword">end</span> <span class="function"><span class="keyword">program</span></span> nestedLoop  </span><br></pre></td></tr></table></figure>
+
+<h3 id="circle语句"><a href="#circle语句" class="headerlink" title="circle语句"></a>circle语句</h3><p>这个类似于C语言中的<code>continue</code>，将会跳过循环的剩余部分，开始下一段循环。</p>
+<h3 id="stop语句"><a href="#stop语句" class="headerlink" title="stop语句"></a>stop语句</h3><p><code>stop</code>语句的作用是停止程序的执行，后面可以跟着字符串和数字，表示返回值。</p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>Fortran中自定义代码片段两种：子程序<code>subroutine</code>和自定义函数<code>function</code>，他们的不同之处在于返回值和传参方式</p>
+<h2 id="子程序"><a href="#子程序" class="headerlink" title="子程序"></a>子程序</h2><p>子程序的一般结构为</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">subroutine</span></span> <span class="keyword">name</span>(arg1, arg2, ....)    </span><br><span class="line">   [declarations, including those for the arguments]    </span><br><span class="line">   [executable statements]  </span><br><span class="line"><span class="keyword">end</span> <span class="function"><span class="keyword">subroutine</span></span> <span class="keyword">name</span></span><br></pre></td></tr></table></figure>
+
+<p>它没有返回值，但是子程序可以修改传入的参数的值。</p>
+<h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><p>自定义函数的一般格式为</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span></span> add(a,b)</span><br><span class="line">	datatype :: a,b</span><br><span class="line">	datatype :: add		<span class="comment">!声明返回数值类型</span></span><br><span class="line">	……</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>自定义函数有返回值，且传入的只是变量值，自定义函数外的变量不会受到影响。</p>
+<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><p>Fortran的文件操作比C语言要简单很多，主要依赖于<code>open</code>,<code>close</code>,<code>read</code>,<code>write</code>四个函数。</p>
+<p>在对某一个文件进行处理之前，需要打开该文件，最简单的方法是</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open (<span class="keyword">unit</span> = <span class="keyword">number</span>, <span class="keyword">file</span> = <span class="string">&quot;name&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>接下来对该文件进行读写只要使用<code>write</code>和<code>read</code>函数就可以</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">write</span>(<span class="keyword">number</span>,*) <span class="string">&quot;string&quot;</span> , num</span><br><span class="line">read(<span class="keyword">number</span>,*) <span class="string">&quot;string&quot;</span>,num</span><br></pre></td></tr></table></figure>
+
+<p>当这个文件不再被使用的时候，应该使用<code>close</code>关闭</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">close(<span class="keyword">unit</span>=<span class="keyword">number</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://clark-young.github.io/2023/03/20/fortran/" data-id="clpelejiu000sysx19hbg0vep" data-title="Brief Notes On Fortran Language" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fortran/" rel="tag">Fortran</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/03/31/latexlec/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          2023年4月1日LaTeX讲座
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/03/17/TeXinvscode/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Use Visual Studio Code to Write LaTeX in Windows</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LaTeX/">LaTeX</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming-language/">programming language</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fortran/" rel="tag">Fortran</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Introduction/" rel="tag">Introduction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/" rel="tag">LaTeX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematica/" rel="tag">Mathematica</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Summer-Intern/" rel="tag">Summer Intern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USTC-Courses/" rel="tag">USTC_Courses</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Welcome/" rel="tag">Welcome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A3%9E%E8%B7%83/" rel="tag">飞跃</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Fortran/" style="font-size: 10px;">Fortran</a> <a href="/tags/Introduction/" style="font-size: 10px;">Introduction</a> <a href="/tags/LaTeX/" style="font-size: 20px;">LaTeX</a> <a href="/tags/Mathematica/" style="font-size: 20px;">Mathematica</a> <a href="/tags/Summer-Intern/" style="font-size: 10px;">Summer Intern</a> <a href="/tags/USTC-Courses/" style="font-size: 10px;">USTC_Courses</a> <a href="/tags/Welcome/" style="font-size: 10px;">Welcome</a> <a href="/tags/%E9%A3%9E%E8%B7%83/" style="font-size: 10px;">飞跃</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/31/latexlec/">2023年4月1日LaTeX讲座</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/20/fortran/">Brief Notes On Fortran Language</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/17/TeXinvscode/">Use Visual Studio Code to Write LaTeX in Windows</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/11/MathematicaLearn_II/">Notes to the Core Language of Mathematica II (List)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/10/MathematicaLearn_I/">Notes to the Core Language of Mathematica I (Introduction &amp; Basic Grammar)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Chunyu Yang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

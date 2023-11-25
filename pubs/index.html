@@ -1,70 +1,234 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Publications | Chunyu Yang&#39;s Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="你好像来到了没有人的荒漠。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Publications">
+<meta property="og:url" content="http://clark-young.github.io/pubs/index.html">
+<meta property="og:site_name" content="Chunyu Yang&#39;s Homepage">
+<meta property="og:description" content="你好像来到了没有人的荒漠。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-03T14:57:52.000Z">
+<meta property="article:modified_time" content="2023-11-25T20:28:46.300Z">
+<meta property="article:author" content="Chunyu Yang">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Chunyu Yang's Homepage" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-  {% block title %}{#
-  #}{% set page_title_suffix = ' | ' + config.title %}{#
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-  #}{% if page.type === "categories" and not page.title %}{#
-    #}{{ __('title.category') + page_title_suffix }}{#
-  #}{% elif page.type === "tags" and not page.title %}{#
-    #}{{ __('title.tag') + page_title_suffix }}{#
-  #}{% else %}{#
-    #}{{ page.title + page_title_suffix }}{#
-  #}{% endif %}{#
-#}{% endblock %}
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-{% block page_class %}page-post-detail{% endblock %}
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
 
-{% block content %}
-
-  <div id="posts" class="posts-expand">
-    {##################}
-    {### PAGE BLOCK ###}
-    {##################}
-    <div class="post-block page">
-      {% include '_partials/page-header.swig' %}
-      {#################}
-      {### PAGE BODY ###}
-      {#################}
-      <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
-        {# tagcloud page support #}
-        {% if page.type === "tags" %}
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                {{ _p('counter.tag_cloud', site.tags.length) }}
-            </div>
-            <div class="tag-cloud-tags">
-              {{ tagcloud({min_font: 12, max_font: 30, amount: 300, color: true, start_color: '#ccc', end_color: '#111'}) }}
-            </div>
-          </div>
-        {% elif page.type === 'categories' %}
-          <div class="category-all-page">
-            <div class="category-all-title">
-                {{ _p('counter.categories', site.categories.length) }}
-            </div>
-            <div class="category-all">
-              {{ list_categories() }}
-            </div>
-          </div>
-        {% else %}
-          {{ page.content }}
-        {% endif %}
-      </div>
-      {#####################}
-      {### END PAGE BODY ###}
-      {#####################}
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Chunyu Yang&#39;s Homepage</a>
+      </h1>
+      
     </div>
-    {######################}
-    {### END PAGE BLOCK ###}
-    {######################}
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://Clark-Young.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/pubs/index.html" class="article-date">
+  <time class="dt-published" datetime="2023-03-03T14:57:52.000Z" itemprop="datePublished">2023-03-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Publications
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>你好像来到了没有人的荒漠。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://clark-young.github.io/pubs/index.html" data-id="clpekxlwd0006sux1cdwmbvzg" data-title="Publications" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LaTeX/">LaTeX</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming-language/">programming language</a></li></ul>
+    </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fortran/" rel="tag">Fortran</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Introduction/" rel="tag">Introduction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/" rel="tag">LaTeX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematica/" rel="tag">Mathematica</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Summer-Intern/" rel="tag">Summer Intern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USTC-Courses/" rel="tag">USTC_Courses</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Welcome/" rel="tag">Welcome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A3%9E%E8%B7%83/" rel="tag">飞跃</a></li></ul>
+    </div>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Fortran/" style="font-size: 10px;">Fortran</a> <a href="/tags/Introduction/" style="font-size: 10px;">Introduction</a> <a href="/tags/LaTeX/" style="font-size: 20px;">LaTeX</a> <a href="/tags/Mathematica/" style="font-size: 20px;">Mathematica</a> <a href="/tags/Summer-Intern/" style="font-size: 10px;">Summer Intern</a> <a href="/tags/USTC-Courses/" style="font-size: 10px;">USTC_Courses</a> <a href="/tags/Welcome/" style="font-size: 10px;">Welcome</a> <a href="/tags/%E9%A3%9E%E8%B7%83/" style="font-size: 10px;">飞跃</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/31/latexlec/">2023年4月1日LaTeX讲座</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/20/fortran/">Brief Notes On Fortran Language</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/17/TeXinvscode/">Use Visual Studio Code to Write LaTeX in Windows</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/11/MathematicaLearn_II/">Notes to the Core Language of Mathematica II (List)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/10/MathematicaLearn_I/">Notes to the Core Language of Mathematica I (Introduction &amp; Basic Grammar)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Chunyu Yang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
